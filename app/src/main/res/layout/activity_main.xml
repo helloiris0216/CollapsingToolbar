@@ -9,7 +9,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             app:contentScrim="@color/black"
             android:fitsSystemWindows="true"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -32,33 +32,35 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:title="Toolbar" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- 要固定在頂部的視圖 -->
+    <include
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:id="@+id/view_layout_search"
+        app:layout_collapseMode="pin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+        layout="@layout/view_search_bar" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="-20dp"
-        android:background="@drawable/nested_scroll_background"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed efficitur risus. Nulla facilisi. Curabitur ut justo id nisi tincidunt tincidunt id non lacus. Duis sit amet quam nibh. Sed vitae mi ac libero posuere pulvinar. Nullam fermentum velit a nibh varius, et vulputate nulla sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida lobortis ex. Vivamus vel elit eu eros facilisis efficitur. Donec euismod sapien id nunc fermentum, nec pharetra neque consectetur. Sed et purus augue. Maecenas nec est at purus commodo blandit nec non leo. Aliquam nec risus vel ex mollis finibus. Nullam id purus nec turpis efficitur blandit. Etiam nec ante vitae turpis suscipit malesuada.
-
-Proin malesuada, velit at condimentum molestie, elit ipsum laoreet tortor, vel dignissim est dui id sapien. Aenean quis semper lectus. Morbi eu nulla velit. Fusce dictum, mi eget volutpat vehicula, justo felis bibendum sapien, nec scelerisque turpis ipsum eget justo. Praesent convallis ligula magna, auctor venenatis mauris efficitur eget. Nulla facilisi. Nam vitae sapien quis velit blandit bibendum. Integer tincidunt, nulla nec scelerisque hendrerit, nulla augue fermentum ipsum, ut aliquet purus nulla sed enim. Duis ullamcorper felis id lacus mattis, et lacinia felis malesuada. Phasellus hendrerit orci id magna vestibulum ultricies. Phasellus vel erat ut nisl volutpat vehicula. Sed auctor massa at velit rutrum, sed dignissim risus pellentesque. Sed nec placerat magna. Nunc placerat, nunc nec vestibulum viverra, erat purus pharetra ex, vitae malesuada turpis orci id sapien.
-
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer ac velit nec ipsum bibendum tristique. Morbi mattis ex vitae elit laoreet volutpat. Duis consectetur eros a velit pellentesque aliquet. Fusce fringilla diam nec mauris tincidunt tincidunt. Cras nec neque varius, sodales mi non, tincidunt felis. Nullam feugiat sagittis felis, vitae vestibulum felis mattis in. Sed id ligula ac nunc auctor blandit ut nec lectus. Vivamus eget ullamcorper mi. Integer congue sapien vitae neque bibendum fermentum. Integer hendrerit, lacus vitae ultrices malesuada, elit magna tincidunt justo, nec accumsan quam metus a nibh. Sed quis magna purus. Sed tempor, risus a efficitur vestibulum, libero est sodales purus, sed fermentum ipsum ligula in velit. Maecenas luctus efficitur mauris nec venenatis. Nunc hendrerit vehicula magna, eu eleifend magna interdum vitae. Sed tincidunt nisi quis velit placerat, non suscipit lorem efficitur."
+                android:text="@string/test_scroll_content"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
