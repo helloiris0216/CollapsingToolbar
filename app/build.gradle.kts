@@ -47,4 +47,15 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("se.emilsjolander:StickyScrollViewItems:1.1.0")
+
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    val coilVer = "2.6.0"
+    implementation("io.coil-kt:coil:$coilVer")
+
+    val viewPager2Ver = "1.1.0"
+    implementation("androidx.viewpager2:viewpager2:$viewPager2Ver")
+
+    val dotsIndicatorVer = "5.0"
+    implementation("com.tbuonomo:dotsindicator:$dotsIndicatorVer")
 }

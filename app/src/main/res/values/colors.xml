@@ -5,4 +5,6 @@
     <color name="color_primary_black_dark">#303841</color>
     <color name="gray">#A7A9B7</color>
     <color name="white_transparency">#50FFFFFF</color>
+    <color name="primary">#5761B2</color>
+    <color name="primary_100">#D5D7EC</color>
 </resources>
